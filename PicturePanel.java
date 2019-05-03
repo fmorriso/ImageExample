@@ -42,8 +42,7 @@ public class PicturePanel extends JPanel {
 			File f = new File(imagePath);
 			if (!f.exists()) {
 				String errorMessage = String.format("file %s does not exist", f.getAbsolutePath());
-				System.out.println(errorMessage);
-				this.setVisible(false);
+				System.out.println(errorMessage);				
 				throw new FileNotFoundException(errorMessage);
 			}
 			Image unscaledImage = ImageIO.read(f);
