@@ -1,26 +1,23 @@
 import java.awt.*;
-import java.awt.event.*;
-import java.awt.image.*;
 import java.io.*;
+//
 import javax.imageio.*;
 import javax.swing.*;
 
 import javax.swing.JPanel;
 
+@SuppressWarnings("serial")
 public class PicturePanel extends JPanel {
-	private BufferedImage img;
-	private ImageIcon icon;
+	
 	private Image scaledImage;
 	private Dimension panelSize;
 
-	// ImageIcon icon = createImageIcon("images/" + name + ".gif");
 	public PicturePanel(Dimension frameSize) {
 
 		this.panelSize = frameSize;
 		this.setSize(panelSize);
 		this.setPreferredSize(panelSize);
-
-		icon = createImageIcon("images/" + "robot.jpg");
+		
 		Image unscaledImage = getImageFromFile("images/robot.jpg");
 
 		// scale the image to a % of whatever screen size we are running on.
@@ -59,14 +56,4 @@ public class PicturePanel extends JPanel {
 		return null;
 	}
 
-	/** Returns an ImageIcon, or null if the path was invalid. */
-	protected static ImageIcon createImageIcon(String path) {
-		java.net.URL imgURL = PicturePanel.class.getResource(path);
-		if (imgURL != null) {
-			return new ImageIcon(imgURL);
-		} else {
-			System.err.println("Couldn't find file: " + path);
-			return null;
-		}
-	}
 }
