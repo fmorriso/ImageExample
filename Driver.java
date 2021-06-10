@@ -3,7 +3,6 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 public class Driver {
 
@@ -12,10 +11,10 @@ public class Driver {
 		// capture size of screen we're using
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
-		// Define the size of the JFrame as a square that is a percentage of the
+		// Define the size of the JFrame as a rectangle that is a percentage of the
 		// available screen area and a multiple of 100.
 		final int frameHeight = (int) (screenSize.height * 85.00 / 100) / 100 * 100;
-		final int frameWidth = frameHeight;
+		final int frameWidth = (int) (screenSize.width * 85.00 / 100) / 100 * 100;
 
 		Dimension frameSize = new Dimension(frameWidth, frameHeight);
 		System.out.format("frameSize=%s%n", frameSize);
