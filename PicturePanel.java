@@ -1,7 +1,4 @@
 import java.awt.*;
-import java.io.*;
-//
-import javax.imageio.*;
 import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
