@@ -1,15 +1,18 @@
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.io.File;
 
 import javax.swing.JFrame;
+import javax.swing.filechooser.FileSystemView;
 
 public class Driver
 {
 
 	public static void main(String[] args)
 	{
-
+		File picture = FileHelper.choosePicture();
+				
 		// capture size of screen we're using
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
@@ -34,7 +37,7 @@ public class Driver
 		// Create the JPanel that sits inside the JFrame.
 		// Notice how we have to tell it the size of the "parent" JFrame
 		// in order to size it correctly.
-		PicturePanel pnl = new PicturePanel(frameSize);
+		PicturePanel pnl = new PicturePanel(frameSize, picture);
 		frame.getContentPane().add(pnl, BorderLayout.CENTER);
 
 		// This is key to making the JFrame and JPanel contents look correct,
@@ -44,7 +47,7 @@ public class Driver
 		// put the JFrame in the middle of the physical screen
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
-
+		pnl.setParent(frame);
 	}
 
 }
