@@ -11,7 +11,8 @@ public class Driver
 
 	public static void main(String[] args)
 	{
-		File picture = FileHelper.choosePicture();
+		// ask user which picture we should use
+		File picture = PictureHelper.choosePicture();
 				
 		// capture size of screen we're using
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
