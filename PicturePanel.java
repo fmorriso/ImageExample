@@ -10,7 +10,9 @@ public class PicturePanel extends JPanel
 
 	public PicturePanel(Dimension frameSize)
 	{
-
+    // Note: while it is tempting to use parent properties and methods here to set the size,
+    // Java Swing does not tell you the correct size at run-time (always width = 0, height = 0).
+    // You are forced to pass in the desired size via the constructor before setting the JPanel size.
 		this.panelSize = frameSize;
 		this.setSize(panelSize);
 		this.setPreferredSize(panelSize);
@@ -32,7 +34,7 @@ public class PicturePanel extends JPanel
 	public void paint(Graphics g)
 	{
 		super.paint(g);
-    // draw the scaled image 
+    // draw the scaled image
 		g.drawImage(scaledImage, 0, 0, null);
 	}
 
