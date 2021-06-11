@@ -13,7 +13,7 @@ public class Driver
 	{
 		// ask user which picture we should use
 		File picture = PictureHelper.choosePicture();
-				
+
 		// capture size of screen we're using
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
@@ -48,6 +48,9 @@ public class Driver
 		// put the JFrame in the middle of the physical screen
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
+
+		// must wait until here to inform the JPanel about its JFrame parent
+		// because frame will be null prior to this point.
 		pnl.setParent(frame);
 	}
 
