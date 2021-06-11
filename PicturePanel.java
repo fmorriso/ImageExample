@@ -15,9 +15,11 @@ public class PicturePanel extends JPanel
 		this.setSize(panelSize);
 		this.setPreferredSize(panelSize);
 
+    // pull in an image from the images directory that is part of this project.
+    // feel free to change it to suit your needs.
 		Image unscaledImage = ImageUtilities.getImageFromFile("images/femaleLionAndHall.jpg");
 
-		// scale the image to a % of it's original size
+		// scale the image to fit within the panel
 		double scale = ImageUtilities.getOptimumScale(panelSize, unscaledImage);
 
 		scaledImage = ImageUtilities.getScaledImage(unscaledImage, scale, scale);
@@ -26,9 +28,11 @@ public class PicturePanel extends JPanel
 
 	}
 
+  @Override
 	public void paint(Graphics g)
 	{
 		super.paint(g);
+    // draw the scaled image 
 		g.drawImage(scaledImage, 0, 0, null);
 	}
 
