@@ -1,5 +1,6 @@
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Toolkit;
 import java.io.File;
 
@@ -11,6 +12,11 @@ public class Driver
 
 	public static void main(String[] args)
 	{
+		// Make dialogs easier to see, especially on 4K or higher resolution
+		// monitors which older versions of Java tend to render with postage-stamp
+		// size text which is extremely difficult to see.
+		DialogHelper.makeDialogsEasierToSee(Font.SANS_SERIF, 18);
+		
 		// ask user which picture we should use
 		File picture = PictureHelper.choosePicture();
 
