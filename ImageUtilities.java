@@ -40,33 +40,33 @@ public class ImageUtilities
 		Image scaledImage = unscaledImage.getScaledInstance(width, height, Image.SCALE_SMOOTH);
 		return scaledImage;
 	}
-	
+
 	public static double getOptimumScale(Dimension panelSize, Image img)
 	{
 		double scale = 1;
-		
+
 		double scaleW = 1;
 		int imgW = img.getWidth(null);
-		if(imgW > panelSize.width)
+		if (imgW > panelSize.width)
 		{
-			scaleW = (double)imgW / panelSize.width; // image too wide, so scale back the width
+			scaleW = (double) imgW / panelSize.width; // image too wide, so scale back the width
 		}
 		else if (imgW < panelSize.width)
 		{
-			scaleW = (double)panelSize.width / imgW; // enlarge image
+			scaleW = (double) panelSize.width / imgW; // enlarge image
 		}
-		
+
 		double scaleH = 1;
 		int imgH = img.getHeight(null);
-		if(imgH > panelSize.height)
+		if (imgH > panelSize.height)
 		{
-			scaleH = (double)imgH / panelSize.height; // image too tall, so scale back the height
+			scaleH = (double) imgH / panelSize.height; // image too tall, so scale back the height
 		}
-		else if(imgH < panelSize.height)
+		else if (imgH < panelSize.height)
 		{
-			scaleH = (double)panelSize.height / imgH; // enlarge image
+			scaleH = (double) panelSize.height / imgH; // enlarge image
 		}
-		
+
 		// use the smaller of scaleH and scaleW to preserve aspect ratio of image
 		scale = Math.min(scaleH, scaleW);
 		return scale;
