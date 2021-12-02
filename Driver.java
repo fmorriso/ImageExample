@@ -14,7 +14,7 @@ public class Driver
 		// Make dialogs easier to see, especially on 4K or higher resolution
 		// monitors which older versions of Java tend to render with postage-stamp
 		// size text which is extremely difficult to see.
-		DialogHelper.makeDialogsEasierToSee(Font.SANS_SERIF, 18);
+		DialogHelper.makeDialogsEasierToSee(Font.SANS_SERIF, 24);
 		
 		// ask user which picture we should use
 		File picture = PictureHelper.choosePicture();
@@ -26,7 +26,7 @@ public class Driver
 		// available device screen area, rounded to a multiple of 100, because it
 		// might make it easier to do calculations that position other objects within
 		// the frame.
-		final double pct = 90; // a value that I recommend be between 50 and 100
+		final double pct = 80; // a value that I recommend be between 50 and 100
 		final int frameHeight = (int) (screenSize.height * pct / 100) / 100 * 100;
 		final int frameWidth = (int) (screenSize.width * pct / 100) / 100 * 100;
 

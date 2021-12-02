@@ -3,6 +3,7 @@ import java.awt.Image;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import javax.swing.*;
 
 import javax.imageio.ImageIO;
 
@@ -10,7 +11,6 @@ public class ImageUtilities
 {
 	public static Image getImageFromFile(String imagePath)
 	{
-
 		// load and scale the image
 		try
 		{
@@ -19,6 +19,7 @@ public class ImageUtilities
 			{
 				String errorMessage = String.format("file %s does not exist", f.getAbsolutePath());
 				System.out.println(errorMessage);
+                JOptionPane.showMessageDialog(null, errorMessage, "File Not Found", JOptionPane.ERROR_MESSAGE);
 				throw new FileNotFoundException(errorMessage);
 			}
 			Image unscaledImage = ImageIO.read(f);
