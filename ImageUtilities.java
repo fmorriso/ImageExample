@@ -3,7 +3,7 @@ import java.awt.Image;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import javax.swing.*;
+import javax.swing.JOptionPane;
 
 import javax.imageio.ImageIO;
 
